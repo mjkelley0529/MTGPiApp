@@ -15,10 +15,10 @@ public class MainPanel extends JFrame implements ActionListener {
     private MenuBar menuBar=new MenuBar();
     private String[] menuTitles={"Options","Help"};
     private Menu[] menus=new Menu[menuTitles.length];
-    private Color[] bgColors={Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, Color.ORANGE, Color.MAGENTA},
+    private Color[] bgColors={Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, Color.PINK, Color.MAGENTA, Color.ORANGE, Color.CYAN},
             fgColors=new Color[bgColors.length];
     //Logic Variables
-    private static int pC=3;
+    private static int pC=5;
     private int format=COMMANDER;
 
     MainPanel(int playerCount) {
@@ -42,7 +42,7 @@ public class MainPanel extends JFrame implements ActionListener {
     }
     private void setupPlayers() {
         PlayerPanel players[]=new PlayerPanel[pC];
-        pane.setLayout(new GridLayout((int)Math.round(pC/2.),pC/2,5,5));
+        pane.setLayout(new GridLayout((int)Math.round(pC/2.),2,5,5));
         for(int i=0;i<pC;i++) {
             players[i]=new PlayerPanel(fgColors[i], bgColors[i], getStartingLifeTotal());
             pane.add(players[i]);
